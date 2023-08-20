@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<interface>
+
+<object class="AdwAboutWindow" id="AboutRipJaws">
+    <property name="application-icon">/home/alex/Projects/RipJaws/no-disc-dark.jpg</property>
+    <property name="application-name">RipJaws</property>
+    <property name="comments">A simple and easy to use CD ripper and player built using python and libadwaita. Made by a teenager with a week to burn during summer break.</property>
+    <property name="copyright">Copyright © 2023 Alex Savage</property>
+    <property name="developer-name">Alex Savage</property>
+    <property name="license-type">gpl-3-0</property>
+    <property name="version">0.1.0</property>
+    <property name="website">github.com/asavage7/RipJaws</property>
+  </object>
+
+</interface>

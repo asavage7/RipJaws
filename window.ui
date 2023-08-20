@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<interface>
+  <requires lib="gtk" version="4.0" />
+  <requires lib="Adw" version="1.0" />
+  <object class="AdwApplicationWindow" id="main_window">
+    <property name="default-width">1024</property>
+    <property name="default-height">768</property>
+    <child>
+      <object class="GtkBox" id="mainbox">
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkHeaderBar" id="header_bar">
+            <child type="title">
+              <object class="AdwWindowTitle" id="WindowTitle">
+                <property name="title">RipJaws</property>
+                <property name="subtitle">No Disc Inserted</property>
+              </object>
+            </child>
+            <child type="start">
+              <object class="GtkButton" id="RefreshButton">
+                <property name="child">
+                  <object class="AdwButtonContent">
+                    <property name="icon-name">view-refresh-symbolic</property>
+                    <property name="label">CD Lookup</property>
+
+                  </object>
+                </property>
+              </object>
+            </child>
+            <child type="end">
+              <object class="GtkMenuButton">
+                <property name="icon-name">open-menu-symbolic</property>
+                <property name="menu-model">primary_menu</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox">
+            <child>
+              <object class="GtkBox">
+                <property name="orientation">vertical</property>
+                <property name="margin-top">24</property>
+                <property name="margin-start">24</property>
+                <property name="margin-end">24</property>
+                <property name="spacing">24</property>
+                <child>
+                  <object class="GtkBox">
+                    <property name="orientation">horizontal</property>
+                    <property name="margin-top">8</property>
+                    <property name="spacing">24</property>
+                    <child>
+                      <object class="GtkFrame">
+                        <child>
+                          <object class="GtkImage" id="AlbumArt">
+                            <property name="file">./no-disc-dark.jpg</property>
+                            <property name="pixel-size">256</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="orientation">vertical</property>
+                        <property name="spacing">8</property>
+                        <child>
+                          <object class="GtkBox">
+                            <property name="orientation">horizontal</property>
+                            <property name="spacing">8</property>
+                            <child>
+                              <object class="GtkText" id="AlbumTitle">
+                                <property name="hexpand">TRUE</property>
+                                <property name="text">Unknown Album</property>
+                                <property name="attributes">pango_attr_size(72)</property>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkBox">
+                            <property name="orientation">horizontal</property>
+                            <property name="spacing">8</property>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="label">Artist Name:</property>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkEntry" id="ArtistName">
+                                <property name="hexpand">TRUE</property>
+                                <property name="text"></property>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkBox">
+                            <property name="orientation">horizontal</property>
+                            <property name="spacing">8</property>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="label">Year:</property>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkEntry" id="ReleaseYear">
+                                <property name="hexpand">FALSE</property>
+                                <property name="text"></property>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkSeparator">
+                                <property name="orientation">vertical</property>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="label">Genre:</property>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkEntry" id="Genre">
+                                <property name="hexpand">FALSE</property>
+                                <property name="text"></property>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkSeparator">
+                                <property name="orientation">vertical</property>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="label">Disc:</property>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkEntry">
+                                <property name="hexpand">FALSE</property>
+                                <property name="text">1</property>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkBox">
+                    <property name="orientation">horizontal</property>
+                    <property name="margin-top">8</property>
+                    <property name="spacing">8</property>
+                    <child>
+                      <object class="GtkLabel" id="NumTracks">
+                        <property name="label">No Disc Inserted</property>
+                        <property name="hexpand">TRUE</property>
+                        <property name="xalign">0</property>
+                      </object>
+                    </child>
+                    <child type="end">
+                      <object class="GtkButton">
+                        <property name="child">
+                          <object class="AdwButtonContent">
+                            <property name="icon-name">media-playback-start-symbolic</property>
+                            <property name="label">Play</property>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkButton">
+                        <property name="child">
+                          <object class="AdwButtonContent">
+                            <property name="icon-name">media-playlist-shuffle-symbolic</property>
+                            <property name="label">Shuffle</property>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="RipAll">
+                        <property name="child">
+                          <object class="AdwButtonContent">
+                            <property name="icon-name">document-save-symbolic</property>
+                            <property name="label">Rip All</property>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkFrame">
+                    <child>
+                      <object class="GtkScrolledWindow">
+                        <property name="height-request">400</property>
+                        <property name="vexpand">TRUE</property>
+                        <property name="child">
+                          <object class="GtkListBox" id="TrackListing">
+                            <property name="selection-mode">none</property>
+                            <property name="overflow">hidden</property>
+                            <style>
+                              <class name="boxed-list" />
+                            </style>
+                            <!-- Track Listings Go Here -->
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+
+
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkActionBar">
+            <property name="margin-top">24</property>
+            <child type="center">
+              <object class="GtkBox">
+                <property name="orientation">horizontal</property>
+                <property name="hexpand">TRUE</property>
+
+                <child type="start">
+                  <object class="GtkButton">
+                    <property name="child">
+                      <object class="AdwButtonContent">
+                        <property name="icon-name">media-seek-backward-symbolic</property>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+                <child type="start">
+                  <object class="GtkButton">
+                    <property name="child">
+                      <object class="AdwButtonContent">
+                        <property name="icon-name">media-playback-pause-symbolic</property>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+                <child type="start">
+                  <object class="GtkButton">
+                    <property name="child">
+                      <object class="AdwButtonContent">
+                        <property name="icon-name">media-seek-forward-symbolic</property>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+                <child type="start">
+                  <object class="GtkLabel">
+                    <property name="margin-start">8</property>
+                    <property name="margin-end">4</property>
+                    <property name="label">1:52</property>
+                  </object>
+                </child>
+                <child type="start">
+                  <object class="GtkScale">
+                    <property name="orientation">horizontal</property>
+                    <property name="adjustment">playback-value</property>
+                    <property name="hexpand">TRUE</property>
+                  </object>
+                </child>
+                <child type="end">
+                  <object class="GtkLabel">
+                    <property name="margin-start">4</property>
+                    <property name="margin-end">8</property>
+                    <property name="label">-1:08</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkDialog" id="songdetails">
+    <child type="action">
+      <object class="GtkButton" id="button_cancel" />
+    </child>
+    <child type="action">
+      <object class="GtkButton" id="button_ok">
+      </object>
+    </child>
+    <action-widgets>
+      <action-widget response="cancel">button_cancel</action-widget>
+      <action-widget response="ok" default="true">button_ok</action-widget>
+    </action-widgets>
+  </object>
+
+  <object class="GtkAdjustment" id="playback-value">
+    <property name="lower">0</property>
+    <property name="upper">180</property>
+    <property name="value">113</property>
+    <property name="step-increment">1</property>
+  </object>
+
+  <menu id="primary_menu">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_Preferences</attribute>
+        <attribute name="action">app.show_preferences</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_Keyboard Shortcuts</attribute>
+        <attribute name="action">win.show-help-overlay</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_About RipJaws</attribute>
+        <attribute name="action">app.show_about</attribute>
+      </item>
+    </section>
+  </menu>
+</interface>

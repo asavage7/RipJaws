@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<interface>
+
+<object class="AdwPreferencesWindow" id="RipJawsSettings">
+    <property name="search-enabled">TRUE</property>
+    <child>
+      <object class="AdwPreferencesPage">
+        <property name="name">Ripping</property>
+        <property name="icon-name">folder-download-symbolic</property>
+        <property name="title">Ripping Preferences</property>
+        <child>
+          <object class="AdwPreferencesGroup">
+            <property name="title">Audio Preferences</property>
+            <property name="description">Select the audio format and quality to rip your CDs.</property>
+            <child>
+              <object class="AdwPreferencesRow">
+                <property name="title">Audio Format</property>
+                <child>
+                <object class="AdwActionRow">
+                  <property name="title">Audio Format</property>
+                  <property name="subtitle">FLAC and WAV are lossless.</property>
+                  <child type="suffix">
+                    <object class="AdwSplitButton">
+                      <property name="margin-top">8</property>
+                      <property name="margin-bottom">8</property>
+                      <property name="label">MP3</property>
+                    </object>
+                  </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+
+</interface>

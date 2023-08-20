@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<interface>
+  <object class="AdwActionRow" id="Track">
+    <property name="title">Song Title</property>
+    <property name="subtitle">Artist - Album</property>
+    <child type="prefix">
+      <object class="GtkCenterBox">
+        <property name="width-request">36</property>
+        <child type="center">
+          <object class="GtkLabel" id="SongNumber">
+            <property name="label">#.</property>
+            <property name="margin-start">8</property>
+            <property name="margin-end">4</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child type="prefix">
+      <object class="GtkCheckButton" id="TrackSelection">
+        <property name="margin-top">8</property>
+        <property name="margin-bottom">8</property>
+        <property name="active">True</property>
+      </object>
+    </child>
+    <child type="suffix">
+      <object class="GtkButton" id="Playbutton">
+        <property name="icon-name">media-playback-start-symbolic</property>
+      <property
+          name="margin-top">8</property>
+      <property name="margin-bottom">8</property>
+      <property
+          name="tooltip-text">Play this song</property>" </object>
+    </child>
+    <child type="suffix">
+      <object class="GtkButton" id="Infobutton">
+        <property name="icon-name">help-about-symbolic</property>
+        <property name="margin-top">8</property>
+        <property name="margin-bottom">8</property>
+        <property name="tooltip-text">View and edit info about this song</property>
+      </object>
+    </child>
+  </object>
+</interface>
